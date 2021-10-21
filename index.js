@@ -57,15 +57,14 @@ function draw(){
     });
 }
 
-startGame();
 
-data = [
-    [8,2,2,4],
-    [4,4,2,4],
-    [2,1024,1024,8],
-    [8,2,8,16],
-]
-draw();
+// data = [
+//     [8,2,2,4],
+//     [4,4,2,4],
+//     [2,1024,1024,8],
+//     [8,2,8,16],
+// ]
+// draw();
 
 
 // 움직이게
@@ -207,23 +206,27 @@ window.addEventListener('keyup',(e) => {
     }
 });
 
-let startmouse;
-window.addEventListener('mousedown', (e) => {
-    startmouse = [e.offsetX, e.offsetY];
-});
-
-window.addEventListener('mouseup', (e) => {
-    const endmouse = [e.offsetX, e.offsetY];
-    const diffX = endmouse[0] = startmouse[0];
-    const diffY = endmouse[1] = startmouse[1];
-    if(diffX < 0 && Math.abs(diffX) > Math.abs(diffY)){
+let startCoord;
+  window.addEventListener('mousedown', (event) => {
+    startCoord = [event.clientX, event.clientY];
+  });
+  window.addEventListener('mouseup', (event) => {
+    const endCoord = [event.clientX, event.clientY];
+    const diffX = endCoord[0] - startCoord[0];
+    const diffY = endCoord[1] - startCoord[1];
+    if (diffX < 0 && Math.abs(diffX) > Math.abs(diffY)) {
         movecell('left');
-    } else if(diffX > 0 && Math.abs(diffX) > Math.abs(diffY)){
+    } else if (diffX > 0 && Math.abs(diffX) > Math.abs(diffY)) {
         movecell('right');
-    } else if(diffY > 0 && Math.abs(diffX) <= Math.abs(diffY)){
+    } else if (diffY > 0 && Math.abs(diffX) <= Math.abs(diffY)) {
         movecell('down');
-    } else if(diffY < 0 && Math.abs(diffX) <= Math.abs(diffY)){
+    } else if (diffY < 0 && Math.abs(diffX) <= Math.abs(diffY)) {
         movecell('up');
-    }
-
+    } 
 });
+
+$gameBtn.addEventListener('click',()=>{
+    data = [];
+    startGame();
+});
+    startGame();
