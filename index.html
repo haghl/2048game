@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <div id="containner">
+            <!-- 점수와 버튼 -->
+            <div class="top">
+                <p id="gameBtn">
+                    New Game
+                </p>
+
+                <div id="score">
+                    <p>
+                        SCORE<br/>
+                        <span class="scorenum">0</span>
+                    </p>
+                </div>
+
+                <div id="bestscore">
+                    <p>
+                        Best Score<br/>
+                        <span class="bestnum">0</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 게임 -->
+            <table id="gamebody">
+            </table>
+        </div>
+    </div>
+</body>
+</html>

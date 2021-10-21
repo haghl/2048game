@@ -1,0 +1,52 @@
+* {margin: 0;padding: 0;}
+
+#wrap {width: 100%;height: 100%;}
+#containner {width: 500px;margin: 0 auto; user-select: none;}
+
+/* 스코어 */
+.top {width: 100%;height: 200px; display: flex;justify-content: space-around; align-items: center;}
+
+#gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold;}
+
+:is(#score, #bestscore) {width: 100px;padding: 5px 0;background: #bbada0;}
+:is(#score, #bestscore) p {text-align: center; color: #fff;}
+:is(#score, #bestscore) p span {display: inline-block;margin-top: 5px;}
+
+/* 게임 */
+#gamebody {width: 100%;height: 500px; user-select: none;border-spacing: 15px;background: #bbada0;}
+#gamebody td {width: 106px;height: 106px;font-size: 50px;font-weight: bold;text-align: center;background: rgba(238, 228, 218, 0.35); color: #fff;}
+
+/* #realgame {width: 500px;height: 500px;position: absolute;top: 200px;left: 50%;transform: translateX(-50%);}
+#realgame > div {width: 106px;height: 106px;position: absolute;top: 0;left: 0;}
+#realgame > div .innernum {width: 100%;height: 100%;text-align: center;line-height: 106px;font-weight: bold; font-size: 30px; color: #fff;} */
+
+/* 위치정하기
+#realgame .position1_1 {top: 15px;left: 15px;}
+#realgame .position1_2 {top: 15px;left: 136px;}
+#realgame .position1_3 {top: 15px;left: 258px;}
+#realgame .position1_4 {top: 15px;left: 379px;}
+#realgame .position2_1 {top: 136px;left: 15px;}
+#realgame .position2_2 {top: 136px;left: 136px;}
+#realgame .position2_3 {top: 136px;left: 258px;}
+#realgame .position2_4 {top: 136px;left: 379px;}
+#realgame .position3_1 {top: 258px;left: 15px;}
+#realgame .position3_2 {top: 258px;left: 136px;}
+#realgame .position3_3 {top: 258px;left: 258px;}
+#realgame .position3_4 {top: 258px;left: 379px;}
+#realgame .position4_1 {top: 379px;left: 15px;}
+#realgame .position4_2 {top: 379px;left: 136px;}
+#realgame .position4_3 {top: 379px;left: 258px;}
+#realgame .position4_4 {top: 379px;left: 379px;} */
+
+/* 색깔 */
+#gamebody td.num2 {background: #eee4da; color: #000 !important;}
+#gamebody td.num4 {background: #eee1c9; color: #000 !important;}
+#gamebody td.num8 {background: #f3b27a;}
+#gamebody td.num16 {background: #eee1c9;}
+#gamebody td.num32 {background: #f77c5f;}
+#gamebody td.num64 {background: #f75f3b;}
+#gamebody td.num128 {background: #edd073;}
+#gamebody td.num256 {background: #edcc62;}
+#gamebody td.num512 {background: #edc950;}
+#gamebody td.num1024 {background: #edc53f;}
+#gamebody td.num2048 {background: #edc22e;}
