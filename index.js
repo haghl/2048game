@@ -27,7 +27,7 @@ function startGame() {
     putcell();
     draw();
 }
-// 랜덤숫지
+// 랜덤숫자
 function putcell(){
     const emptycell = [];
     data.forEach(function(rowdata, i){
@@ -225,8 +225,9 @@ let startCoord;
     } 
 });
 
-$gameBtn.addEventListener('click',()=>{
+$gameBtn.addEventListener('click', function(){
     data = [];
-    startGame();
 });
-    startGame();
+
+
+startGame();

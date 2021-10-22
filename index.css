@@ -6,7 +6,7 @@
 /* 스코어 */
 .top {width: 100%;height: 200px; display: flex;justify-content: space-around; align-items: center;}
 
-#gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold;}
+#gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold; cursor: pointer;}
 
 :is(#score, #bestscore) {width: 100px;padding: 5px 0;background: #bbada0;}
 :is(#score, #bestscore) p {text-align: center; color: #fff;}
@@ -14,7 +14,7 @@
 
 /* 게임 */
 #gamebody {width: 100%;height: 500px; user-select: none;border-spacing: 15px;background: #bbada0;}
-#gamebody td {width: 106px;height: 106px;font-size: 50px;font-weight: bold;text-align: center;background: rgba(238, 228, 218, 0.35); color: #fff;}
+#gamebody td {width: 106px;height: 106px;font-size: 50px;font-weight: bold;text-align: center;background: rgba(238, 228, 218, 0.35); color: #fff; transition: all .1s ease-in-out;}
 
 /* #realgame {width: 500px;height: 500px;position: absolute;top: 200px;left: 50%;transform: translateX(-50%);}
 #realgame > div {width: 106px;height: 106px;position: absolute;top: 0;left: 0;}

@@ -1,0 +1,52 @@
+* {margin: 0;padding: 0;}
+
+#wrap {width: 100%;height: 100%;}
+#containner {width: 500px;margin: 0 auto; user-select: none;}
+
+/* 스코어 */
+.top {width: 100%;height: 200px; display: flex;justify-content: space-around; align-items: center;}
+
+#gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold;}
+
+:is(#score, #bestscore) {width: 100px;padding: 5px 0;background: #bbada0;}
+:is(#score, #bestscore) p {text-align: center; color: #fff;}
+:is(#score, #bestscore) p span {display: inline-block;margin-top: 5px;}
+
+/* 게임 */
+#gameboard {position: relative;}
+#gamebody {width: 100%;height: 500px;display: flex;justify-content: space-evenly;align-content: space-evenly;flex-wrap: wrap;user-select: none;background: #bbada0;}
+#gamebody .block {width: 106px;height: 106px;background: rgba(238, 228, 218, 0.35);}
+
+#real {width: 500px;height: 500px;position: absolute;top: 0;left: 50%;transform: translateX(-50%);}
+#real > div {width: 106px;height: 106px;position: absolute;top: 0;left: 0;text-align: center;line-height: 106px;transition: all 0.1s ease-in-out; font-weight: bold; font-size: 30px; color: #fff;}
+
+/* 위치정하기 */
+#real .position0_0 {top: 15px;left: 15px;}
+#real .position0_1 {top: 15px;left: 136px;}
+#real .position0_2 {top: 15px;left: 258px;}
+#real .position0_3 {top: 15px;left: 379px;}
+#real .position1_0 {top: 136px;left: 15px;}
+#real .position1_1 {top: 136px;left: 136px;}
+#real .position1_2 {top: 136px;left: 258px;}
+#real .position1_3 {top: 136px;left: 379px;}
+#real .position2_0 {top: 258px;left: 15px;}
+#real .position2_1 {top: 258px;left: 136px;}
+#real .position2_2 {top: 258px;left: 258px;}
+#real .position2_3 {top: 258px;left: 379px;}
+#real .position3_0 {top: 379px;left: 15px;}
+#real .position3_1 {top: 379px;left: 136px;}
+#real .position3_2 {top: 379px;left: 258px;}
+#real .position3_3 {top: 379px;left: 379px;}
+
+/* 색깔 */
+#real .num2 {background: #eee4da; color: #000 !important;}
+#real .num4 {background: #eee1c9; color: #000 !important;}
+#real .num8 {background: #f3b27a;}
+#real .num16 {background: #eee1c9;}
+#real .num32 {background: #f77c5f;}
+#real .num64 {background: #f75f3b;}
+#real .num128 {background: #edd073;}
+#real .num256 {background: #edcc62;}
+#real .num512 {background: #edc950;}
+#real .num1024 {background: #edc53f;}
+#real .num2048 {background: #edc22e;}
