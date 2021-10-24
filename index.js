@@ -89,7 +89,6 @@ function movecell(direction) {
           }
         });
       });
-      console.log(newdata);
       [1, 2, 3, 4].forEach((rowdata, i) => {
         [1, 2, 3, 4].forEach((celldata, j) => {
           data[i][j] = Math.abs(newdata[i][j]) || 0;
@@ -116,7 +115,6 @@ function movecell(direction) {
           }
         });
       });
-      console.log(newdata);
       [1, 2, 3, 4].forEach((rowdata, i) => {
         [1, 2, 3, 4].forEach((celldata, j) => {
           data[i][3 - j] = Math.abs(newdata[i][j]) || 0;
@@ -143,7 +141,6 @@ function movecell(direction) {
           }
         });
       });
-      console.log(newdata);
       [1, 2, 3, 4].forEach((rowdata, i) => {
         [1, 2, 3, 4].forEach((celldata, j) => {
           data[j][i] = Math.abs(newdata[i][j]) || 0;
@@ -170,7 +167,6 @@ function movecell(direction) {
           }
         });
       });
-      console.log(newdata);
       [1, 2, 3, 4].forEach((rowdata, i) => {
         [1, 2, 3, 4].forEach((celldata, j) => {
           data[3 - j][i] = Math.abs(newdata[i][j]) || 0;
@@ -180,7 +176,7 @@ function movecell(direction) {
     }
   }
   if (data.flat().includes(2048)) {
-    draw();
+    // draw();
     setTimeout(() => {
       alert("축하합니다 2048을 만드셨어요!");
       local(scorenum.textContent);
@@ -188,6 +184,7 @@ function movecell(direction) {
   } else if (!data.flat().includes(0)) {
     alert(`여기까지~ 점수는 ${scorenum.textContent}점`);
     local(scorenum.textContent);
+    reset();
   }
 
   putcell();
@@ -244,8 +241,11 @@ $gameBtn.addEventListener("click", function () {
 });
 
 function reset(){
+    let arr = Array.from($gamebody.children);
+    arr.forEach(function(i){
+      i.remove();
+    });
     data = [];
-    $gamebody.children.length = 1;
     startGame();
 }
 
