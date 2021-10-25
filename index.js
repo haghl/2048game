@@ -303,10 +303,11 @@ window.addEventListener("keyup", (e) => {
 
 // 마우스
 let startCoord;
-window.addEventListener("mousedown", (event) => {
+
+window.addEventListener("mousedown" || "touchstart" , (event) => {
 	startCoord = [event.clientX, event.clientY];
 });
-window.addEventListener("mouseup", (event) => {
+window.addEventListener("mouseup" || "touchend" , (event) => {
 	const endCoord = [event.clientX, event.clientY];
 	const diffX = endCoord[0] - startCoord[0];
 	const diffY = endCoord[1] - startCoord[1];
