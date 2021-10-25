@@ -72,8 +72,7 @@ startGame();
 //     [1024,1024,1024,1024],
 //     [8,2,8,16],
 // ]
-// draw();
-
+// // draw();
 
 // 움직이게
 function movecell(direction) {
