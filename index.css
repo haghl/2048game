@@ -8,7 +8,7 @@
 
 #gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold; cursor: pointer;}
 
-:is(#score, #bestscore) {width: 100px;padding: 5px 0;background: #bbada0;}
+:is(#score, #bestscore) {width: 100px;padding: 5px 0;position: relative; background: #bbada0;}
 :is(#score, #bestscore) p {text-align: center; color: #fff;}
 :is(#score, #bestscore) p span {display: inline-block;margin-top: 5px;}
 
@@ -50,3 +50,17 @@
 #gamebody td.num512 {background: #edc950;}
 #gamebody td.num1024 {background: #edc53f;}
 #gamebody td.num2048 {background: #edc22e;}
+
+/* 스코어 애니메이션 */
+#score .plusnum {position: absolute;left: 50%;transform: translateX(-50%); font-weight: bold;font-size: 18px; color: red; animation: move-up 600ms ease-in forwards;}
+
+@keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
