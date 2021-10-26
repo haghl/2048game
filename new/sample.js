@@ -23,7 +23,6 @@ function startGame() {
   });
   putcell();
   draw();
-  cl(data)
 }
 
 // 랜덤숫자 위치
@@ -58,20 +57,22 @@ function creatediv(position) {
   const $fragment = document.createDocumentFragment();
   const $div = document.createElement("div");
   $div.classList.add(position);
-
-  $fragment.appendChild($div);
-  $realgame.appendChild($fragment);
+  console.log(position)
+  if(!$realgame.querySelector(`.${position}`)){
+    $fragment.appendChild($div);
+    $realgame.appendChild($fragment);
+  }
   return $div;
 }
 
 startGame();
-data = [
-  [0, 2, 2, 2],
-  [0, 2, 2, 2],
-  [1024, 1024, 0, 0],
-  [0, 0, 0, 2],
-];
-draw();
+// data = [
+//   [0, 2, 2, 2],
+//   [0, 2, 2, 2],
+//   [1024, 1024, 0, 0],
+//   [0, 0, 0, 2],
+// ];
+// draw();
 
 // 움직이게
 function movecell(direction) {
@@ -87,9 +88,7 @@ function movecell(direction) {
             if (prevData === celldata) {
               // 이전 값과 지금 값이 같으면
               $realgame.querySelector(`.${$position[i][j]}`).remove();
-              // $realgame.querySelector(`.${$position[i][j]}`).className = $position[i][j-1];
               currentRow[currentRow.length - 1] *= -2;
-              cl($position[i][j]);
             } else {
               newdata[i].push(celldata);
               prevpos[i].push($position[i][j]);
@@ -101,7 +100,6 @@ function movecell(direction) {
         row.forEach((cell, j) => {
           if(cell){
             $realgame.querySelector(`.${prevpos[i][j]}`).className = $position[i][j];
-            cl(cell)
           }
         });
       });
@@ -127,9 +125,7 @@ function movecell(direction) {
             const prevData = currentRow[currentRow.length - 1];
             if (prevData === rowData[3 - j]) {
               // 이전 값과 지금 값이 같으면
-              // cl($position[i][])
               $realgame.querySelector(`.${$position[i][3 - j]}`).remove();
-              // $realgame.querySelector(`.${$position[i][j]}`).className = $position[i][j-1];
               currentRow[currentRow.length - 1] *= -2;
             } else {
               newdata[i].push(rowData[3 - j]);
@@ -142,7 +138,6 @@ function movecell(direction) {
         row.forEach((cell, j) => {
           if(cell){
             $realgame.querySelector(`.${prevpos[i][j]}`).className = $position[i][3 - j];
-            cl(cell)
           }
         });
       });
@@ -169,9 +164,7 @@ function movecell(direction) {
             if (prevData === celldata) {
               // 이전 값과 지금 값이 같으면
               $realgame.querySelector(`.${$position[i][j]}`).remove();
-              // $realgame.querySelector(`.${$position[i][j]}`).className = $position[i][j-1];
               currentRow[currentRow.length - 1] *= -2;
-              cl($position[j][i]);
             } else {
 							newdata[j].push(celldata);
               prevpos[j].push($position[i][j]);
@@ -203,14 +196,14 @@ function movecell(direction) {
       let prevpos = [[], [], [], []];;
       data.forEach((rowData, i) => {
         rowData.forEach((celldata, j) => {
-					if (data[3 - j][i]) {
+          if (data[3 - i][j]) {
 						const currentRow = newdata[j];
 						const prevData = currentRow[currentRow.length - 1];
-						if (prevData === data[3 - i][j]) {
+            if (prevData === data[3 - i][j]) {
               // 이전 값과 지금 값이 같으면
               $realgame.querySelector(`.${$position[3 - i][j]}`).remove();
               currentRow[currentRow.length - 1] *= -2;
-              cl($position[j][i]);
+              // cl($position[3 - i][j]);
             } else {
 							newdata[j].push(data[3 - i][j]);
               prevpos[j].push($position[3 - i][j]);
@@ -221,7 +214,7 @@ function movecell(direction) {
       newdata.forEach((row, i) => {
         row.forEach((cell, j) => {
           if(cell){
-            $realgame.querySelector(`.${prevpos[i][j]}`).className = $position[3 - i][j];
+            $realgame.querySelector(`.${prevpos[i][j]}`).className = $position[3 - j][i];
           }
         });
       });
@@ -230,16 +223,17 @@ function movecell(direction) {
         [1, 2, 3, 4].forEach((celldata, j) => {
 					data[3 - j][i] = Math.abs(newdata[i][j]) || 0;
           if(data[3 - j][i] > 0){
-            $realgame.querySelector(`.${$position[j][i]}`).textContent = data[3 - j][i];
-            $realgame.querySelector(`.${$position[j][i]}`).setAttribute('data-num',data[3 - j][i]);
+            $realgame.querySelector(`.${$position[3 - j][i]}`).textContent = data[3 - j][i];
+            $realgame.querySelector(`.${$position[3 - j][i]}`).setAttribute('data-num',data[3 - j][i]);
           }
         });
       });
       break;
     }
   }
-
-  cl(data)
+  // cl(data)
+  putcell();
+  draw();
 }
 
 // 키보드
