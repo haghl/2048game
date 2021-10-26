@@ -8,9 +8,9 @@
 
 #gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold;}
 
-:is(#score, #bestscore) {width: 100px;padding: 5px 0;background: #bbada0;}
-:is(#score, #bestscore) p {text-align: center; color: #fff;}
-:is(#score, #bestscore) p span {display: inline-block;margin-top: 5px;}
+.top :is(#score, #bestscore) {width: 100px;padding: 5px 0;background: #bbada0;}
+.top :is(#score, #bestscore) p {text-align: center; color: #fff;}
+.top :is(#score, #bestscore) p span {display: inline-block;margin-top: 5px;}
 
 /* 게임 */
 #gameboard {position: relative;}
@@ -21,32 +21,32 @@
 #real > div {width: 106px;height: 106px;position: absolute;top: 0;left: 0;text-align: center;line-height: 106px;transition: all 0.1s ease-in-out; font-weight: bold; font-size: 30px; color: #fff;}
 
 /* 위치정하기 */
-#real .position0_0 {top: 15px;left: 15px;}
-#real .position0_1 {top: 15px;left: 136px;}
-#real .position0_2 {top: 15px;left: 258px;}
-#real .position0_3 {top: 15px;left: 379px;}
-#real .position1_0 {top: 136px;left: 15px;}
-#real .position1_1 {top: 136px;left: 136px;}
-#real .position1_2 {top: 136px;left: 258px;}
-#real .position1_3 {top: 136px;left: 379px;}
-#real .position2_0 {top: 258px;left: 15px;}
-#real .position2_1 {top: 258px;left: 136px;}
-#real .position2_2 {top: 258px;left: 258px;}
-#real .position2_3 {top: 258px;left: 379px;}
-#real .position3_0 {top: 379px;left: 15px;}
-#real .position3_1 {top: 379px;left: 136px;}
-#real .position3_2 {top: 379px;left: 258px;}
-#real .position3_3 {top: 379px;left: 379px;}
+#real .position1_1 {top: 15px;left: 15px;}
+#real .position1_2 {top: 15px;left: 136px;}
+#real .position1_3 {top: 15px;left: 258px;}
+#real .position1_4 {top: 15px;left: 379px;}
+#real .position2_1 {top: 136px;left: 15px;}
+#real .position2_2 {top: 136px;left: 136px;}
+#real .position2_3 {top: 136px;left: 258px;}
+#real .position2_4 {top: 136px;left: 379px;}
+#real .position3_1 {top: 258px;left: 15px;}
+#real .position3_2 {top: 258px;left: 136px;}
+#real .position3_3 {top: 258px;left: 258px;}
+#real .position3_4 {top: 258px;left: 379px;}
+#real .position4_1 {top: 379px;left: 15px;}
+#real .position4_2 {top: 379px;left: 136px;}
+#real .position4_3 {top: 379px;left: 258px;}
+#real .position4_4 {top: 379px;left: 379px;}
 
 /* 색깔 */
-#real .num2 {background: #eee4da; color: #000 !important;}
-#real .num4 {background: #eee1c9; color: #000 !important;}
-#real .num8 {background: #f3b27a;}
-#real .num16 {background: #eee1c9;}
-#real .num32 {background: #f77c5f;}
-#real .num64 {background: #f75f3b;}
-#real .num128 {background: #edd073;}
-#real .num256 {background: #edcc62;}
-#real .num512 {background: #edc950;}
-#real .num1024 {background: #edc53f;}
-#real .num2048 {background: #edc22e;}
+#real [data-num='2'] {background: #eee4da; color: #000 !important;}
+#real [data-num='4'] {background: #eee1c9; color: #000 !important;}
+#real [data-num='8'] {background: #f3b27a;}
+#real [data-num='16'] {background: #eee1c9;}
+#real [data-num='32'] {background: #f77c5f;}
+#real [data-num='64'] {background: #f75f3b;}
+#real [data-num='128'] {background: #edd073;}
+#real [data-num='256'] {background: #edcc62;}
+#real [data-num='512'] {background: #edc950;}
+#real [data-num='1024'] {background: #edc53f;}
+#real [data-num='2048'] {background: #edc22e;}
