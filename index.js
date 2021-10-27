@@ -9,6 +9,7 @@ let data = [];
 let scorenum = $score.querySelector(".scorenum");
 let bestscore = $bestscore.querySelector(".bestnum");
 let audio = new Audio();
+audio.load();
 
 bestscore.textContent = localStorage.getItem("best") || 0;
 
@@ -241,7 +242,6 @@ function movecell(direction) {
 
 	if (data.flat().includes(2048)) {
     audio.src = 'new/mp3/victoty.mp3';
-    audio.load();
     audio.play();
     
 		setTimeout(() => {
@@ -251,7 +251,6 @@ function movecell(direction) {
 		}, 50);
 	} else if (defeatCheck()===true){
     audio.src = 'new/mp3/lose.mp3';
-    audio.load();
     audio.play();
     // alert가 먼저 들어가서 셋타임 걸음
 		setTimeout(() => {
