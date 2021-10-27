@@ -312,6 +312,7 @@ function movecell(direction) {
   // 승패여부 확인
 	if (data.flat().includes(2048)) {// 데이터안에 2048있을시
     audio.src = 'mp3/victoty.mp3';
+    audio.load();
     audio.play();
     // 블럭이 나오기전에 alert가 먼저 들어가서 셋타임 걸음
 		setTimeout(() => {
@@ -321,6 +322,7 @@ function movecell(direction) {
 		}, 300);
 	} else if (defeatCheck()===true){// 데이터안에 0이 없을시
     audio.src = 'mp3/lose.mp3';
+    audio.load();
     audio.play();
 		setTimeout(() => {
       alert(`여기까지~ 점수는 ${scorenum.textContent}점`);
