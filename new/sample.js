@@ -319,7 +319,7 @@ function movecell(direction) {
 			alert("축하합니다 2048을 만드셨어요!");
 			local(scorenum.textContent);
       reset();
-		}, 300);
+		}, 50);
 	} else if (defeatCheck()===true){// 데이터안에 0이 없을시
     audio.src = 'mp3/lose.mp3';
     audio.load();
@@ -328,7 +328,7 @@ function movecell(direction) {
       alert(`여기까지~ 점수는 ${scorenum.textContent}점`);
 			local(scorenum.textContent);
       reset();
-		}, 300);
+		}, 50);
 	}
 }
 
