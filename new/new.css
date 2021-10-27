@@ -18,7 +18,7 @@
 #gamebody .block {width: 106px;height: 106px;background: rgba(238, 228, 218, 0.35);}
 
 #real {width: 500px;height: 500px;position: absolute;top: 0;left: 50%;transform: translateX(-50%);}
-#real > div {width: 106px;height: 106px;position: absolute;top: 0;left: 0;text-align: center;line-height: 106px;transition: all 0.1s ease-in-out; font-weight: bold; font-size: 30px; color: #fff;}
+#real > div {width: 106px;height: 106px;position: absolute;top: 0;left: 0;text-align: center;line-height: 106px;transition: all 0.1s ease-in-out; font-weight: bold; font-size: 50px; color: #fff;}
 
 /* 위치정하기 */
 #real .position1_1 {top: 15px;left: 15px;}
