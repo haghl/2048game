@@ -45,7 +45,9 @@ function putcell() {
 		});
 	});
 	const randomCell = emptycell[Math.floor(Math.random() * emptycell.length)];
-	data[randomCell[0]][randomCell[1]] = 2;
+  if(data.flat().includes(0)){// data를 펴봤을 때 0있으면
+    data[randomCell[0]][randomCell[1]] = 2;// 랜덤한 data위치에 값 2할당
+  }
 }
 
 // 그려넣기
@@ -246,7 +248,7 @@ function movecell(direction) {
 			local(scorenum.textContent);
       reset();
 		}, 50);
-	} else if (!data.flat().includes(0)){
+	} else if (defeatCheck()===true){
     audio.src = 'new/mp3/lose.mp3';
     audio.play();
     // alert가 먼저 들어가서 셋타임 걸음
@@ -258,6 +260,27 @@ function movecell(direction) {
 	}
 
 }
+
+// 패배구별
+function defeatCheck(){
+  let checkDefeatFlag = true;  
+  data.forEach((rowData,i)=>{
+      if(rowData.includes(0)){
+        checkDefeatFlag = false;// 가로값에 0이 있으면 넘어가고
+      }
+      //가로 체크~~
+      for(let j=0;j<rowData.length;j++){
+        if(rowData[j] === rowData[j+1]){
+          checkDefeatFlag = false;// 양옆에 같은 숫자가 있어도 넘어가고
+        }
+        //세로 체크\
+        if(data[j][i] === data[j+1]?.[i]){// 위아래 같아도 넘어가고
+          checkDefeatFlag = false;
+        }
+      }
+    })
+    return checkDefeatFlag;
+  }
 
 // 점수 추가되는 애니메이션
 function plus(i) {

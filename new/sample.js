@@ -44,7 +44,10 @@ function putcell() {
     });
   });
   const randomCell = emptycell[Math.floor(Math.random() * emptycell.length)];//랜덤한 위치를 뽑아서 변수할당
-  data[randomCell[0]][randomCell[1]] = 2;// 랜덤한 data위치에 값 2할당
+  
+  if(data.flat().includes(0)){// data를 펴봤을 때 0있으면
+    data[randomCell[0]][randomCell[1]] = 2;// 랜덤한 data위치에 값 2할당
+  }
 }
 
 // 그려넣기
@@ -316,7 +319,7 @@ function movecell(direction) {
 			local(scorenum.textContent);
       reset();
 		}, 300);
-	} else if (!data.flat().includes(0)){// 데이터안에 0이 없을시
+	} else if (defeatCheck()===true){// 데이터안에 0이 없을시
     audio.src = 'mp3/lose.mp3';
     audio.play();
 		setTimeout(() => {
@@ -326,6 +329,27 @@ function movecell(direction) {
 		}, 300);
 	}
 }
+
+// 패배구별
+function defeatCheck(){
+  let checkDefeatFlag = true;  
+  data.forEach((rowData,i)=>{
+      if(rowData.includes(0)){
+        checkDefeatFlag = false;// 가로값에 0이 있으면 넘어가고
+      }
+      //가로 체크~~
+      for(let j=0;j<rowData.length;j++){
+        if(rowData[j] === rowData[j+1]){
+          checkDefeatFlag = false;// 양옆에 같은 숫자가 있어도 넘어가고
+        }
+        //세로 체크\
+        if(data[j][i] === data[j+1]?.[i]){// 위아래 같아도 넘어가고
+          checkDefeatFlag = false;
+        }
+      }
+    })
+    return checkDefeatFlag;
+  }
 
 // 점수 추가되는 애니메이션
 function plus(i) {
