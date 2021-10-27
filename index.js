@@ -76,7 +76,7 @@ startGame();
 
 // 움직이게
 function movecell(direction) {
-  let effect = new Audio('mp3/movesound.mp3');
+  let effect = new Audio('new/mp3/movesound.mp3');
 	switch (direction) {
 		case "left": {
 			const newdata = [[], [], [], []];
@@ -238,7 +238,7 @@ function movecell(direction) {
 	draw();
 
 	if (data.flat().includes(2048)) {
-    audio.src = 'mp3/victoty.mp3';
+    audio.src = 'new/mp3/victoty.mp3';
     audio.play();
     
 		setTimeout(() => {
@@ -247,7 +247,7 @@ function movecell(direction) {
       reset();
 		}, 50);
 	} else if (!data.flat().includes(0)){
-    audio.src = 'mp3/lose.mp3';
+    audio.src = 'new/mp3/lose.mp3';
     audio.play();
     // alert가 먼저 들어가서 셋타임 걸음
 		setTimeout(() => {

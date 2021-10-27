@@ -6,9 +6,9 @@
 /* 스코어 */
 .top {width: 100%;height: 200px; display: flex;justify-content: space-around; align-items: center;}
 
-#gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold;}
+#gameBtn {width: 150px;padding: 5px 0;background: #edd073;color: #fff;text-align: center;font-weight: bold; cursor: pointer;}
 
-.top :is(#score, #bestscore) {width: 100px;padding: 5px 0;background: #bbada0;}
+.top :is(#score, #bestscore) {width: 100px;padding: 5px 0; position: relative; background: #bbada0;}
 .top :is(#score, #bestscore) p {text-align: center; color: #fff;}
 .top :is(#score, #bestscore) p span {display: inline-block;margin-top: 5px;}
 
@@ -50,3 +50,31 @@
 #real [data-num='512'] {background: #edc950;}
 #real [data-num='1024'] {background: #edc53f;}
 #real [data-num='2048'] {background: #edc22e;}
+
+
+/* 생성애니메이션 */
+.newbox {animation: newbox 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;}
+@keyframes newbox {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* 스코어 애니메이션 */
+#score .plusnum {position: absolute;left: 50%;transform: translateX(-50%); font-weight: bold;font-size: 18px; color: red; animation: move-up 600ms ease-in forwards;}
+
+@keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
